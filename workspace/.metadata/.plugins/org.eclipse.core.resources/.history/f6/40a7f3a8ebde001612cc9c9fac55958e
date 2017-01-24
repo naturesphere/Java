@@ -1,0 +1,11 @@
+package com.IT18Zhang.www;
+
+public class StringEncodeDecodeDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for(int i=0;i<0xffff;i++)
+			System.out.println((char)i);
+	}
+
+}

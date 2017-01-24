@@ -1,0 +1,13 @@
+import com.it18zhang.a.A;
+import com.it18zhang.java.PackageDemo;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello world!");
+		PackageDemo.sayHello("hello");
+		
+	}
+
+}

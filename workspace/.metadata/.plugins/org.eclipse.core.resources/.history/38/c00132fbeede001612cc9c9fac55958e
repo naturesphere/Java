@@ -1,0 +1,46 @@
+package com.IT18Zhang.www;
+
+import java.util.jar.Attributes.Name;
+
+public class EqualDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	class Student
+	{
+		private String name;
+		private float height;
+		private float weight;
+		private int age;
+		
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public float getHeight() {
+			return height;
+		}
+		public void setHeight(float height) {
+			this.height = height;
+		}
+		public float getWeight() {
+			return weight;
+		}
+		public void setWeight(float weight) {
+			this.weight = weight;
+		}
+		public int getAge() {
+			return age;
+		}
+		public void setAge(int age) {
+			this.age = age;
+		}
+		
+	}
+	
+}

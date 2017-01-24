@@ -1,0 +1,30 @@
+package com.IT18Zhang.www.collection;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapDemo {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Map<String,String> cls=new HashMap<>();
+		Map<String, Map<String,String>> grd = new HashMap<>();
+		Map<String, Map<String, Map<String,String>>> sch=new HashMap<>();
+		
+		for(int k=0;k<6;k++)
+		{
+			for(int j=0;j<10;j++)
+			{
+				for(int i=0;i<60;i++)
+				{
+					cls.put("No"+i, "tom-"+k+"-"+j+"-"+i);
+				}		
+				grd.put("Class"+j, cls);
+			}	
+			
+		}
+		
+	}
+
+}

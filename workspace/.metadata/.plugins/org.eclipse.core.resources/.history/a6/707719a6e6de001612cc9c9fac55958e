@@ -1,0 +1,18 @@
+package com.IT18Zhang.www;
+
+import java.util.Scanner;
+
+public class IntHexDemo 
+{
+	public static void main(String[] args) 
+	{
+		
+		Scanner scanner=new Scanner(System.in);
+		Integer I=100;
+		
+		String string=Integer.toHexString(I);
+		System.out.println(string);
+	}
+	
+	
+}

@@ -1,0 +1,58 @@
+package com.IT18Zhang.www.collection;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class MapDemo {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Map<String, Map<String, Map<String,String>>> sch=new HashMap<>();
+		for(int k=0;k<6;k++)
+		{
+			Map<String, Map<String,String>> grd = new HashMap<>();
+			for(int j=0;j<10;j++)
+			{
+				Map<String,String> cls=new HashMap<>();
+				for(int i=0;i<60;i++)
+				{
+					cls.put("No"+i, "tom-"+k+"-"+j+"-"+i);
+				}		
+				grd.put("Class"+j, cls);
+			}	
+			sch.put("Grade"+k, grd);
+		}
+		
+		System.out.println("==========");
+		Set<Entry<String, Map<String, Map<String, String>>>> es = sch.entrySet();
+		for(Entry<String, Map<String, Map<String, String>>> e:es)
+		{
+			System.out.println(e.getKey());
+			Map<String, Map<String, String>> grd = e.getValue();
+			Set<String> ks = grd.keySet();
+			for(String k:ks)
+			{
+				Map<String, String> cls = grd.get(k);
+				Collection<String> vs = cls.values();
+				int i=0;
+				for(String v:vs)
+				{
+					System.out.print(v);
+					if(++i>=6)
+					{
+						i=0;
+						System.out.println();
+					}
+				}
+				System.out.println();
+			}
+			System.out.println();			
+		}
+		
+	}
+
+}

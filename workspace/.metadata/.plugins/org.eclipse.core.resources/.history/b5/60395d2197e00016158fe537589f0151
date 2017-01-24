@@ -1,0 +1,27 @@
+package com.IT18Zhang.www.IOStream;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+public class FileSliptDemo {
+	
+	public static void main(String[] args) throws Exception {
+		FileInputStream fin = new FileInputStream("number.txt");
+		FileOutputStream fout;
+		final int segNum=5;
+		final int bps = (fin.available()+segNum-1)/segNum;
+		byte[] bts = new byte [bps];
+		int len=-1;
+		
+		fout=new FileOutputStream("number0.txt");
+		while((len=fin.read(bts))!=-1)
+		{
+			
+		}
+		
+		
+		
+	}
+
+}

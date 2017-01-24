@@ -1,0 +1,83 @@
+package com.IT18Zhang.www.collection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PlayGroundStudents {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+class PlayGround
+{
+	static final int TOTAL_GRADES = 6;
+	
+	List<Grade> schoolList = new ArrayList<Grade>(TOTAL_GRADES);
+}
+
+class Grade
+{
+	static final int CLASS_PER_GRADE = 10;
+	
+	List<Class> gradeList = new ArrayList<Class>(CLASS_PER_GRADE);
+	
+	public boolean addClass(Class c)
+	{
+		if(gradeList.size()<CLASS_PER_GRADE)
+		{
+			gradeList.add(c);		
+			return true;
+		}
+		return false;
+	}
+	
+	public void CallTheRoll()
+	{
+		for(Class c:gradeList)
+		{
+			c.CallTheRoll();
+		}
+	}
+	
+}
+
+//class Student is defined in EqualDemo.java
+class Class
+{
+	static final int STUDENDS_PER_CLASS = 60;
+	
+	private List<Student> classList = new ArrayList<Student>(STUDENDS_PER_CLASS);
+	
+	public boolean addStudent(Student s)
+	{
+		if(classList.size()<STUDENDS_PER_CLASS)
+		{
+			classList.add(s);		
+			return true;
+		}
+		return false;
+	}
+	
+	public void CallTheRoll()
+	{
+		int i=0;
+		
+		System.out.println("----------");
+		for(Student s:classList)
+		{
+			System.out.println(s.getName()+" ");
+			if(i++>=10)
+			{
+				i=0;
+				System.out.println("");
+			}
+		}
+		System.out.println("");
+	}
+	
+}

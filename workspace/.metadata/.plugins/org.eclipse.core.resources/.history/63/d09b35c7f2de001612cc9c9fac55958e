@@ -1,0 +1,74 @@
+package com.IT18Zhang.www.collection;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class CollectionDemo {
+	
+	public static void main(String[] args) {
+		
+		List list = new ArrayList();
+	}
+
+}
+
+class Person
+{
+	private String name;
+	
+	public Person(String name)
+	{
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+}
+
+class Car
+{
+	private String name;
+	
+	public Car(String name)
+	{
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+}
+
+class Bee
+{
+	private String name;
+	
+	public Bee(String name)
+	{
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+}
+

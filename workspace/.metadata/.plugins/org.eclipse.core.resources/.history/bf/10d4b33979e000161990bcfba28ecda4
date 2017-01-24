@@ -1,0 +1,71 @@
+package com.IT18Zhang.www.IOStream;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileBufferWriterDemo {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		FileWriter fw = null;
+		BufferedWriter bfw=null;
+		FileReader fr = null;
+		BufferedReader bfr = null;
+		final int Max = 1000000;
+		
+		try {
+			fw = new FileWriter("number.txt");
+			bfw = new BufferedWriter(fw);
+			
+			long t = System.currentTimeMillis();
+			fw.write("");
+			for(int i=0;i<Max;i++){
+				fw.append(Integer.toString(i));
+			}
+			System.out.println("FileWriter:"+(System.currentTimeMillis()-t)+"ms");
+		
+			t = System.currentTimeMillis();
+			bfw.write("");
+			for(int i=0;i<Max;i++){
+				bfw.append(Integer.toString(i));
+			}
+			System.out.println("BufferedWriter:"+(System.currentTimeMillis()-t)+"ms");
+			
+			char[] cbuf = new char [3901440];
+			fr=new FileReader("D:/Download/Explorer/1-1-Linux课程介绍-学习环境搭建-随堂笔记.doc");
+			t = System.currentTimeMillis();
+			if(fr.read(cbuf)!=-1)
+			{
+				System.out.println(cbuf);
+			}
+			System.out.println("FileReader:"+(System.currentTimeMillis()-t)+"ms");
+			
+			bfr = new BufferedReader(fr);
+			t = System.currentTimeMillis();
+			if(bfr.read(cbuf)!=-1)
+			{
+				System.out.println(cbuf);
+			}
+			System.out.println("BufferedReader:"+(System.currentTimeMillis()-t)+"ms");
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try {
+				fw.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+}

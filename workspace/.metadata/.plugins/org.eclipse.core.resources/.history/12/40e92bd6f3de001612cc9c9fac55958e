@@ -1,0 +1,92 @@
+package com.IT18Zhang.www.collection;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class CollectionDemo {
+	
+	public static void main(String[] args) {
+		
+		List lst = new ArrayList();
+		
+		for(int i=0;i<10;i++){
+			lst.add(new Person("Person-"+i));
+		}
+		
+		for(int i=0;i<5;i++){
+			lst.add(new Car("Car-"+i));
+		}
+		
+		for(int i=0;i<3;i++){
+			lst.add(new Bee("Bee-"+i));
+		}
+		
+		for(Iterator it = lst.iterator();it.hasNext();)
+		{
+			Object obj = it.next();
+			if (obj instanceof Person) {
+				 System.out.println((Person)obj).getName());
+			}
+		}
+	}
+
+}
+
+class Person
+{
+	private String name;
+	
+	public Person(String name)
+	{
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+}
+
+class Car
+{
+	private String name;
+	
+	public Car(String name)
+	{
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+}
+
+class Bee
+{
+	private String name;
+	
+	public Bee(String name)
+	{
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+}
+

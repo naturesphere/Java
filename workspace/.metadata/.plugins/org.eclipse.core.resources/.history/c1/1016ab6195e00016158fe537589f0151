@@ -1,0 +1,16 @@
+package com.IT18Zhang.www.IOStream;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class FileSliptDemo {
+	
+	public static void main(String[] args) throws Exception {
+		FileInputStream fin = new FileInputStream("number.txt");
+		final int segNum=5;
+		
+		fin.available()
+		
+	}
+
+}

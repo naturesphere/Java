@@ -1,0 +1,12 @@
+package com.IT18Zhang.www.IOStream;
+
+public class FileBufferWriterDemo {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+
+	}
+
+}

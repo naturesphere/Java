@@ -1,0 +1,60 @@
+package com.IT18Zhang.www.IOStream;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+public class FileSliptDemo {
+	
+	public static void main(String[] args) throws Exception 
+	{
+		FileInputStream fin = new FileInputStream("number.txt");
+		FileOutputStream fout;
+		final int segNum=5;
+		final int bps = (fin.available()+segNum-1)/segNum;
+		byte[] bts = new byte [bps];
+		int len=-1;
+		
+		for(int i=0;i<segNum;i++){
+			fout=new FileOutputStream("number"+i+".txt");
+			if((len=fin.read(bts))!=-1)
+			{
+				fout.write(bts,0,len);
+			}
+			
+		}
+		
+		fout.close();
+		fin.skip(len);
+		fout = new FileOutputStream("number2.txt");
+		if((len=fin.read(bts))!=-1)
+		{
+			fout.write(bts,0,len);
+		}
+		fout.close();
+		fin.skip(len);
+		fout = new FileOutputStream("number4.txt");
+		if((len=fin.read(bts))!=-1)
+		{
+			fout.write(bts,0,len);
+		}
+		fout.close();
+		fin.skip(-len-bps);
+		fout = new FileOutputStream("number3.txt");
+		if((len=fin.read(bts))!=-1)
+		{
+			fout.write(bts,0,len);
+		}
+		fout.close();
+		fin.skip(-len-bps-bps);
+		fout = new FileOutputStream("number1.txt");
+		if((len=fin.read(bts))!=-1)
+		{
+			fout.write(bts,0,len);
+		}
+		fin.close();
+		fout.close();
+		System.out.println("over");
+	}
+
+}

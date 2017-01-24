@@ -1,0 +1,44 @@
+package com.IT18Zhang.www.collection;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class MapDemo {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Map<String, Map<String, Map<String,String>>> sch=new HashMap<>();
+		for(int k=0;k<6;k++)
+		{
+			Map<String, Map<String,String>> grd = new HashMap<>();
+			for(int j=0;j<10;j++)
+			{
+				Map<String,String> cls=new HashMap<>();
+				for(int i=0;i<60;i++)
+				{
+					cls.put("No"+i, "tom-"+k+"-"+j+"-"+i);
+				}		
+				grd.put("Class"+j, cls);
+			}	
+			sch.put("Grade"+k, grd);
+		}
+		
+		Set<Entry<String, Map<String, Map<String, String>>>> es = sch.entrySet();
+		for(Entry<String, Map<String, Map<String, String>>> e:es)
+		{
+			System.out.println(e.getKey());
+			Map<String, Map<String, String>> grd = e.getValue();
+			Set<String> ks = grd.keySet();
+			for(String k:ks)
+			{
+				Map cls = grd.get(k);
+			}
+			
+		}
+		
+	}
+
+}

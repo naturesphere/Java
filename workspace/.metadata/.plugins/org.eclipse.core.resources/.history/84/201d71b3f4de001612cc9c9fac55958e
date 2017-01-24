@@ -1,0 +1,83 @@
+package com.IT18Zhang.www.collection;
+
+import java.util.jar.Attributes.Name;
+
+public class EqualDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student s1 = new Student("s1",1.72f,60.0f,20);
+		Student s2 = new Student("s",1.80f,75.0f,21);
+		Student s3 = new Student("s",1.80f,75.0f,21);
+		Student s4 = new Student();
+		
+		System.out.println(s1.equals(s2));
+		System.out.println(s2.equals(s3));
+		System.out.println(s3.equals(s4));
+	}
+	
+}
+public class Student
+{
+	private String name;
+	private float height;
+	private float weight;
+	private int age;
+	
+	public Student(String name,float height,float weight,int age)
+	{
+		this.name = name;
+		this.height = height;
+		this.weight = weight;
+		this.age = age;
+	}
+	
+	public Student(){
+		
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public float getHeight() {
+		return height;
+	}
+	public void setHeight(float height) {
+		this.height = height;
+	}
+	public float getWeight() {
+		return weight;
+	}
+	public void setWeight(float weight) {
+		this.weight = weight;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public boolean equals(Object obj)
+	{
+		if(obj==null)
+			return false;
+		if(obj instanceof Student)
+		{
+			if( height==((Student)obj).height &&
+					weight==((Student)obj).weight &&
+					age==((Student)obj).age )
+			{
+				if(name==null&&((Student)obj).name==null)
+					return true;
+				if(name!=null&&((Student)obj).name!=null)
+					return name.equals(((Student)obj).name);
+			}
+		}
+		return false;
+	}
+	
+}

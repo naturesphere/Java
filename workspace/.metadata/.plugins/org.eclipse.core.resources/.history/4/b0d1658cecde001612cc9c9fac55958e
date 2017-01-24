@@ -1,0 +1,37 @@
+package com.IT18Zhang.www;
+
+import java.io.UnsupportedEncodingException;
+
+public class StringEncodeDecodeDemo {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		int j=0;
+		
+		for(int i=0;i<0xffff;i++)
+		{			
+			System.out.print((char)i+" ");
+			if(j++>100)
+			{
+				System.out.println(" ");
+				j=0;
+			}
+		}
+		
+		String str="붻뺇뽓싩흞";
+		byte[] bts = str.getBytes();
+		try {
+			String str2 = new String(bts,"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(str);
+		System.out.println(bts);
+		System.out.println(str2);
+		
+	}
+
+}

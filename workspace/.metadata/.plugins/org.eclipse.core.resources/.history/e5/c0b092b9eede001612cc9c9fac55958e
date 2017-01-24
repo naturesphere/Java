@@ -1,0 +1,15 @@
+package com.IT18Zhang.www;
+
+public class EqualDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	class Student
+	{
+		
+	}
+	
+}

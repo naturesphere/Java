@@ -1,0 +1,14 @@
+package com.IT18Zhang.www.IOStream;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class ImageCopy {
+
+	public static void main(String[] args) throws Exception 
+	{
+		FileInputStream fin = new FileInputStream("C:\\Users\\xiebi\\Pictures\\PROFILE.jpg");
+
+	}
+
+}

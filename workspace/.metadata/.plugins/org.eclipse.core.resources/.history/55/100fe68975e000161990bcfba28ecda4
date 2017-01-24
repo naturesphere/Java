@@ -1,0 +1,47 @@
+package com.IT18Zhang.www.IOStream;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileBufferWriterDemo {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		FileWriter fw = null;
+		BufferedWriter bf=null;
+		final int Max = 1000000;
+		
+		try {
+			fw = new FileWriter("number.txt");
+			bf = new BufferedWriter(fw);
+			
+			long t = System.currentTimeMillis();
+			fw.write("");
+			for(int i=0;i<Max;i++){
+				fw.append(Integer.toString(i));
+			}
+			System.out.println("FileWriter:"+(System.currentTimeMillis()-t)+"ms");
+		
+			for(int i=0;i<Max;i++){
+				//fw.append(Integer.toString(i));
+			}
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try {
+				fw.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+}

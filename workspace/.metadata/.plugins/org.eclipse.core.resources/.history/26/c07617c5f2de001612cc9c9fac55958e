@@ -1,0 +1,24 @@
+package com.IT18Zhang.www.collection;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class CollectionDemo {
+	
+	public static void main(String[] args) {
+		
+		List list = new ArrayList();
+	}
+
+}
+
+class Person
+{
+	private String name;
+	
+	Person(String name)
+	{
+		this.name = name;
+	}
+}
+

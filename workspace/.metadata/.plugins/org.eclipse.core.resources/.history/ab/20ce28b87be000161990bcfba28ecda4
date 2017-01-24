@@ -1,0 +1,11 @@
+package com.IT18Zhang.www.IOStream;
+
+public class ImageCopy {
+
+	public static void main(String[] args) 
+	{
+	
+
+	}
+
+}

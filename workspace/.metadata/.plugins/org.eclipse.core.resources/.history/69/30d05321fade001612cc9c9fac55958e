@@ -1,0 +1,128 @@
+package com.IT18Zhang.www.collection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PlayGroundStudents {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		PlayGround pg=new PlayGround();
+		for(int grdNum=0;grdNum<PlayGround.TOTAL_GRADES;grdNum++)
+		{
+			Grade grd = new Grade();
+			for(int clsNum=0;clsNum<Grade.CLASS_PER_GRADE;clsNum++)
+			{
+				Class cls = new Class(clsNum+"");
+				for(int stuNum=0;stuNum<Class.STUDENDS_PER_CLASS;stuNum++)
+					cls.addStudent( new Student("tom"+grdNum+clsNum+stuNum));
+				grd.addClass(cls);
+			}
+			pg.addGrade(grd);
+		}
+		
+	}
+
+}
+
+
+class PlayGround
+{
+	static final int TOTAL_GRADES = 6;
+	
+	List<Grade> schoolList = new ArrayList<Grade>(TOTAL_GRADES);
+	
+	public boolean addGrade(Grade g)
+	{
+		if(schoolList.size()<TOTAL_GRADES)
+		{
+			schoolList.add(g);		
+			return true;
+		}
+		return false;
+	}
+	
+	public void CallTheRoll()
+	{
+		System.out.println("**********");
+		for(Grade g:schoolList)
+		{
+			g.CallTheRoll();
+		}
+		System.out.println("**********");
+	}
+	
+}
+
+class Grade
+{
+	static final int CLASS_PER_GRADE = 10;
+	
+	List<Class> gradeList = new ArrayList<Class>(CLASS_PER_GRADE);
+	
+	public boolean addClass(Class c)
+	{
+		if(gradeList.size()<CLASS_PER_GRADE)
+		{
+			gradeList.add(c);		
+			return true;
+		}
+		return false;
+	}
+	
+	public void CallTheRoll()
+	{
+		System.out.println("==========");
+		for(Class c:gradeList)
+		{
+			c.CallTheRoll();
+		}
+		System.out.println("==========");
+	}
+	
+}
+
+//class Student is defined in EqualDemo.java
+class Class
+{
+	static final int STUDENDS_PER_CLASS = 60;
+	
+	private String name;
+	private List<Student> classList = new ArrayList<Student>(STUDENDS_PER_CLASS);
+	
+	public Class(String name)
+	{
+		this.name = name;
+	}
+	
+	public boolean addStudent(Student s)
+	{
+		if(classList.size()<STUDENDS_PER_CLASS)
+		{
+			classList.add(s);		
+			return true;
+		}
+		return false;
+	}
+	
+	public void CallTheRoll()
+	{
+		int i=0;
+		
+		System.out.println("----------");
+		for(Student s:classList)
+		{
+			System.out.print(s.getName()+" ");
+			if(i++>=10)
+			{
+				i=0;
+				System.out.println("");
+			}
+		}
+		System.out.println("");
+		System.out.println("----------");
+	}
+	
+}
