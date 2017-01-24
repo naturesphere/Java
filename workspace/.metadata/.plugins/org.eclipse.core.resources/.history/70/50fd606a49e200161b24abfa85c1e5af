@@ -1,0 +1,79 @@
+package com.IT18Zhang.www.IOStream;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FileArchiveDemo2 {
+
+}
+
+class Archiver
+{
+	public static void MyArchive(String des, String... srcs) throws Exception
+	{
+		//write name length (4 bytes)
+		//write name string (name length bytes)
+		//write data length (4 bytes)
+		//write data (data length bytes)
+		
+	}
+	
+	//write length (4 bytes)
+	/*
+	 * int [0][1][2][3]
+	 * to
+	 * [0]
+	 * [1]
+	 * [2]
+	 * [3] 
+	 */
+	private void WriteLength(String src,FileOutputStream fout)
+	{
+		int nNameLength = src.length();
+		final int L = 4;
+		byte[] bts=new byte [L];
+		
+		bts[0] = (byte)(nNameLength>>>24);
+		bts[1] = (byte)(nNameLength>>>16); 
+		bts[2] = (byte)(nNameLength>>>8);
+		bts[3] = (byte)(nNameLength);
+		
+		try {
+			 fout.write(bts);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private int ReadLength(FileInputStream fin)
+	{
+		final int L = 4;
+		byte bts[] = new byte [L];
+		int nLength=0;
+		try {
+			if(L!=fin.read(bts))
+				return -1;
+		
+			nLength|=bts[0];
+			nLength<<=8;
+			nLength|=bts[1];
+			nLength<<=8;
+			nLength|=bts[2];
+			nLength<<=8;
+			nLength|=bts[3];
+			return nLength;
+				
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return -1;
+		}
+	}
+	
+	private void WriteData(String des, String src)
+	{
+		
+	}
+}

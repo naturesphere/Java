@@ -1,0 +1,44 @@
+package com.IT18Zhang.www.IOStream;
+
+import java.io.FileOutputStream;
+
+public class FileArchiveDemo2 {
+
+}
+
+class Archiver
+{
+	public static void MyArchive(String des, String... srcs) throws Exception
+	{
+		//write name length (4 bytes)
+		//write name string (name length bytes)
+		//write data length (4 bytes)
+		//write data (data length bytes)
+		
+	}
+	
+	//write length (4 bytes)
+	/*
+	 * int [0][1][2][3]
+	 * to
+	 * [0]
+	 * [1]
+	 * [2]
+	 * [3] 
+	 */
+	private void WriteLength(String src,FileOutputStream fout)
+	{
+		int nNameLength = src.length();
+		byte[] bts=new byte [4];
+		
+		bts[0] = (byte)(nNameLength>>>24);
+		bts[1] = (byte)(nNameLength>>>16); 
+		bts[2] = (byte)(nNameLength>>>8);
+		bts[3] = (byte)(nNameLength);
+		
+		fout.write(bts);
+	}
+	
+	private int ReadLength()
+	
+}

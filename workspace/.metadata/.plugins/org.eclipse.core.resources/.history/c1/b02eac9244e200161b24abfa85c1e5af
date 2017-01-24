@@ -1,0 +1,17 @@
+package com.IT18Zhang.www.IOStream;
+
+public class FileArchiveDemo2 {
+
+}
+
+class Archiver
+{
+	public static void MyArchive(String des, String... srcs) throws Exception
+	{
+		//write name length (4 bytes)
+		//write name string (name length bytes)
+		//write data length (4 bytes)
+		//write data (data length bytes)
+		
+	}
+}
